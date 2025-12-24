@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1a2a3a, #0f172a);
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+
+.subtitle {
+  margin: 10px 0 30px;
+  opacity: 0.85;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+  max-width: 620px;
+  margin: auto;
+}
+
+.day {
+  height: 90px;
+}
+
+.day-inner {
+  height: 100%;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+
+  background: linear-gradient(145deg, #b91c1c, #7f1d1d);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.45);
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.day-inner:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+.locked .day-inner {
+  background: linear-gradient(145deg, #475569, #334155);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.opened .day-inner {
+  background: linear-gradient(145deg, #16a34a, #166534);
+}
+
+.today .day-inner {
+  box-shadow:
+    0 0 0 2px rgba(255,255,255,0.6),
+    0 0 25px rgba(34,197,94,0.9);
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(6px);
+  background: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background: rgba(255,255,255,0.95);
+  color: #111;
+  width: 340px;
+  padding: 30px;
+  border-radius: 18px;
+  margin: 15% auto;
+  animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+  from { transform: scale(0.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.close {
+  float: right;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.visit-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 18px;
+  background: #16a34a;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.visit-btn:hover {
+  background: #22c55e;
+}
+.modal-content a {
+  pointer-events: auto;
+}
+.music-bar {
+  max-width: 420px;
+  margin: 15px auto 35px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.music-bar button {
+  background: #22c55e;
+  border: none;
+  color: white;
+  font-size: 16px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.music-bar input[type="range"] {
+  flex: 1;
+  accent-color: #22c55e;
+}
+
+.music-bar span {
+  font-size: 13px;
+  opacity: 0.9;
+}

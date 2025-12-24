@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Digital Advent Calendar 🎄</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1>🎄 Digital Advent Calendar</h1>
+  <p class="subtitle">Each day unlocks a weird & wonderful website</p>
+    <div class="music-bar">
+  <button id="playBtn">▶</button>
+  <input type="range" id="progress" value="0">
+  <span id="time">0:00</span>
+</div>
+
+<audio id="bgMusic" src="Assets/25.mp3"></audio>
+
+  <div class="calendar" id="calendar"></div>
+
+  <div class="modal" id="modal">
+<div class="modal-content" onclick="event.stopPropagation()">
+
+      <span class="close" id="closeBtn">&times;</span>
+      <div id="modalText"></div>
+    </div>
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
